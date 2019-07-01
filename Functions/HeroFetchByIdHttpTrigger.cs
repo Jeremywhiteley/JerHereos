@@ -21,7 +21,7 @@ namespace Heroes.FuncApp.Functions
 
         [FunctionName("HeroFetchByIdHttpTrigger")]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "heroes/{id}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "heroes/{id}")] HttpRequest req,
             string id,
             ILogger log)
         {

@@ -20,7 +20,7 @@ namespace Heroes.FuncApp.Functions
 
         [FunctionName("HeroListHttpTrigger")]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "heroes")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "heroes")] HttpRequest req,
             ILogger log)
         {
             var heroList =

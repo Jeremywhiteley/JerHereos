@@ -23,11 +23,11 @@ namespace Heroes.FuncApp.Functions
 
         [FunctionName("HeroUpdateByIdHttpTrigger")]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "put", Route = "heroes/{id}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "heroes/{id}")] HttpRequest req,
             string id,
             ILogger log)
         {
-            var heroUpdateOptions = 
+            var heroUpdateOptions =
                 JsonConvert.DeserializeObject<HeroUpdateOptions>(
                     await new StreamReader(req.Body).ReadToEndAsync());
 

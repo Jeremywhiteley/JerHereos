@@ -21,7 +21,7 @@ namespace Heroes.FuncApp.Functions
 
         [FunctionName("HeroDeleteByIdHttpTrigger")]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "delete", Route = "heroes/{id}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "heroes/{id}")] HttpRequest req,
             string id,
             ILogger log)
         {
